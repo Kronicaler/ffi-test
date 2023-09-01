@@ -5,11 +5,16 @@ include_cpp! {
     safety!(unsafe_ffi)
     generate!("DoMath")
     generate!("Goat")
+    generate!("jurassic")
 }
 
 fn main() {
     println!("Hello, world! - C++ math should say 12={}", ffi::DoMath(4));
     let mut goat = ffi::Goat::new().within_box();
+    
+    goat.as_mut().add_a_horn();
+    goat.as_mut().add_a_horn();
+    goat.as_mut().add_a_horn();
     goat.as_mut().add_a_horn();
     goat.as_mut().add_a_horn();
     goat.as_mut().add_a_horn();
@@ -21,4 +26,11 @@ fn main() {
         describe
     );
     println!("{}", describe);
+
+    ffi::jurassic();
+}
+
+#[autocxx::extern_rust::extern_rust_function]
+pub fn go_extinct() {
+    println!("Boom")
 }

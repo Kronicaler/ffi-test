@@ -31,3 +31,4 @@ inline std::string Goat::describe() const
     return oss.str();
 }
 inline uint32_t Goat::get_horns() const { return horns; }
+void jurassic();
