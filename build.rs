@@ -19,6 +19,6 @@ fn main() -> miette::Result<()> {
 
     println!("cargo:rerun-if-changed=src/main.rs");
     println!("cargo:rerun-if-changed=src/cpp/input.h");
-    println!("cargo:rerun-if-changed=src/cpp/input.cc");
+    println!("cargo:rerun-if-changed=src/cpp/input.cpp");
     Ok(())
 }
