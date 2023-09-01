@@ -32,3 +32,4 @@ inline std::string Goat::describe() const
 }
 inline uint32_t Goat::get_horns() const { return horns; }
 void jurassic();
+void print();
