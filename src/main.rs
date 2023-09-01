@@ -19,7 +19,6 @@ fn main() {
     goat.as_mut().add_a_horn();
     goat.as_mut().add_a_horn();
     goat.as_mut().add_a_horn();
-    goat.as_mut().add_a_horn();
 
     let describe = format!("This goat has {} horns.", goat.get_horns());
     assert_eq!(
