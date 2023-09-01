@@ -10,7 +10,8 @@ include_cpp! {
 }
 
 fn main() {
-    println!("Hello, world! - C++ math should say 12={}", ffi::DoMath(4));
+    println!("Rust math should say 12={}", 4 * 3);
+    println!("C++ math called from Rust should say 12={}", ffi::DoMath(4));
     let mut goat = ffi::Goat::new().within_box();
 
     goat.as_mut().add_a_horn();
@@ -21,18 +22,18 @@ fn main() {
     goat.as_mut().add_a_horn();
     goat.as_mut().add_a_horn();
 
-    let describe = format!("This goat has {} horns.", goat.get_horns());
+    let describe = format!("This C++ goat has {} horns in Rust.", goat.get_horns());
     assert_eq!(
         goat.describe().as_ref().unwrap().to_string_lossy(),
         describe
     );
     println!("{}", describe);
-
-    ffi::jurassic();
+    
     ffi::print();
+    ffi::jurassic();
 }
 
 #[autocxx::extern_rust::extern_rust_function]
 pub fn go_extinct() {
-    println!("Boom")
+    println!("Rust Boom called from C++")
 }
