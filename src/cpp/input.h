@@ -27,7 +27,7 @@ inline std::string Goat::describe() const
 {
     std::ostringstream oss;
     std::string plural = horns == 1 ? "" : "s";
-    oss << "This C++ goat has " << horns << " horn" << plural << ".";
+    oss << "This C++ goat has " << horns << " horn" << plural << " in Rust.";
     return oss.str();
 }
 inline uint32_t Goat::get_horns() const { return horns; }
